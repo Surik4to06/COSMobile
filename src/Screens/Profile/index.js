@@ -17,6 +17,13 @@ export default () => {
     const photoURL = user.photoURL;
     const phone = user.phoneNumber;
 
+    const Logout = () => {
+        Auth.signOut();
+        navigation.reset({
+            routes: [{name: 'Login'}]
+        });
+    }
+
     return (
         <Container>
             <Header title="Perfil" />
@@ -89,7 +96,7 @@ export default () => {
                         fontSize: 18
                     }}>Editar Perfil</Text>
                     </InfoBtn>
-                    <InfoBtn>
+                    <InfoBtn onPress={Logout}>
                         <Text style={{
                         color: '#FFFFFF',
                         fontSize: 18

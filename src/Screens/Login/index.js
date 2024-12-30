@@ -34,7 +34,8 @@ const Login = () => {
     const handleLogin = async () => {
         if (email !== '' && password !== '') {
             try {
-                const user = await signInWithEmailAndPassword(Auth, email, password);
+                const user = await signInWithEmailAndPassword(Auth, email, password)
+
                 navigation.reset({
                     routes: [{name: 'MainTab'}]
                 });
