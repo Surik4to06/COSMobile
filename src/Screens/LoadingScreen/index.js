@@ -7,22 +7,22 @@ import { useNavigation } from "@react-navigation/native";
 // import { UserContext } from "../../contexts/userContext";
 import { Auth } from "../../../utils/firebase";
 
-const LoadingScreen = () => {
+const LoadingScreen = async () => {
 
     const navigation = useNavigation();
 
-    let token = AsyncStorage.getItem(token);
+    const tokenRefresh = await AsyncStorage.getItem('token');
+    console.log('token = ', tokenRefresh)
 
-    if (token) {
-        navigation.reset({
-            routes: [{name: 'MainTab'}]
-        });
-    } else {
+    // if (tokenRefresh === tokenRefresh) {
+    //     navigation.reset({
+    //         routes: [{name: 'MainTab'}]
+    //     });
+    // } else {
         navigation.reset({
             routes: [{name: 'Login'}]
         });
-
-    }
+    // }
 
     return (
         <Container>

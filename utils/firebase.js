@@ -17,20 +17,4 @@ export const app = initializeApp(firebaseConfig);
 
 export const Auth = getAuth(app);
 
-// export const displayName = user.displayName();
-// export const Email = user.email();
-// export const photoURL = user.photoURL();
-
 console.log(Auth.currentUser)
-
-// console.log('nome: ', displayName,
-//   'Email: ', Email,
-//   'photoURL: ', photoURL
-//  )
-
-// displayName = 'Surik4to06';
-// Email = 'surik@g.com';
-// photoURL = 'https://i.pinimg.com/236x/74/58/f6/7458f61c3de2104c0406b3a8d9ebb6cc.jpg';
-// const emailVerified = user.emailVerified;
-
-// export const uid = user.uid;

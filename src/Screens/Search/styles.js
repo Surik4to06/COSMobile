@@ -15,7 +15,7 @@ export const HeaderBody = styled.View`
     
 `;
 
-export const LocationArea = styled.View`
+export const SearchArea = styled.View`
     margin-top: 20px;
     height: 60px;
     background-color: #4EADBE;
@@ -29,12 +29,16 @@ export const LocationArea = styled.View`
     padding-right: 20px;
 `;
 
-export const LocationInput = styled.TextInput`
+export const SearchInput = styled.TextInput`
     flex: 1;
     font-size: 16px;
     color: #FFFFFF;
 `;
 
-export const LocationFinder = styled.TouchableOpacity`
+export const SearchFinder = styled.TouchableOpacity`
     
+`;
+
+export const SearchList = styled.FlatList`
+
 `;

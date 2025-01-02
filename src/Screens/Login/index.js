@@ -41,7 +41,7 @@ const Login = () => {
                 });
 
                 let token = Auth.currentUser.refreshToken;
-                await AsyncStorage.setItem(token);
+                await AsyncStorage.setItem('token', token);
 
                 console.log(user);
 
