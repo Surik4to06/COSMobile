@@ -21,12 +21,6 @@ export default () => {
     const photoURL = user.photoURL;
     const phone = user.phoneNumber;
 
-    if (photoURL === null) {
-        updateProfile(Auth.currentUser, {
-            photoURL: 'https://i.pinimg.com/236x/74/58/f6/7458f61c3de2104c0406b3a8d9ebb6cc.jpg',
-        })
-    }
-
     const [selectedImage, setSelectedImage] = useState(photoURL);
     const [name, setName] = useState('');
     const [nick, setNick] = useState(displayName);
@@ -54,20 +48,22 @@ export default () => {
     }
 
     const handleSaveDataProfile = async () => {
-        if (selectedImage != '' && nick != '' && email != '') {
+        if (selectedImage != '') {
             updateProfile(Auth.currentUser, {
-                displayName: nick, 
                 photoURL: selectedImage
               })
-              sendEmailVerification(Auth.currentUser)
-              updateEmail(Auth.currentUser, email)
-              .then(() => {
-                console.log('foi'),
-                alert('foi')
-              }).catch((error) => {
-                alert('deu merda');
-                console.log(error);
-              });
+
+            
+            alert('foi');
+            //   sendEmailVerification(Auth.currentUser)
+            //   updateEmail(Auth.currentUser, email)
+            //   .then(() => {
+            //     console.log('foi'),
+            //     alert('foi')
+            //   }).catch((error) => {
+            //     alert('deu merda');
+            //     console.log(error);
+            //   });
         }
     }
 

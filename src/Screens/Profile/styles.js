@@ -9,7 +9,6 @@ export const InfosProfile = styled.Text`
     margin-top: 20px;
     font-size: 18px;
     flex-direction: row;
-    justify-content: space-between;
 `;
 
 export const ContainerBtn = styled.View`

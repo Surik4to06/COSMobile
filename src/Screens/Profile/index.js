@@ -63,7 +63,7 @@ export default () => {
                     </Text>
                     <Text style={{
                         marginLeft: 10,
-                    }}>{displayName}</Text>
+                    }}> {displayName}</Text>
                 </InfosProfile>
                 <InfosProfile>
                     <Text style={{
@@ -74,7 +74,7 @@ export default () => {
                     </Text>
                     <Text style={{
                         marginLeft: 10
-                    }}>{Email}</Text>
+                    }}> {Email}</Text>
                 </InfosProfile>
                 <InfosProfile>
                     <Text style={{
@@ -85,7 +85,7 @@ export default () => {
                     </Text>
                     <Text style={{
                         marginLeft: 10
-                    }}>{phone}</Text>
+                    }}> {phone}</Text>
                 </InfosProfile>
                 <ContainerBtn>
                     <InfoBtn onPress={() => {

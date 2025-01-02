@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Auth } from "../../../utils/firebase";
 
 import { UserContext } from "../../contexts/userContext";
@@ -39,10 +39,20 @@ const Login = () => {
                 navigation.reset({
                     routes: [{name: 'MainTab'}]
                 });
+
+                let token = Auth.currentUser.refreshToken;
+                await AsyncStorage.setItem(token);
+
                 console.log(user);
 
             } catch (error) {
                 console.log(error);
+                if (error.code === 'auth/invalid-email') {
+                    alert('Email inválido');
+                }
+                if (error.code === 'auth/invalid-credential') {
+                    alert('Algo esta errado, verifique e tente novamente');
+                }
             }
 
         } else {

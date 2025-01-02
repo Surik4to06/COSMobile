@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 // import AsyncStorage from "@react-native-async-storage/async-storage";
-import { createUserWithEmailAndPassword, userCredential } from "firebase/auth";
+import { createUserWithEmailAndPassword, userCredential, updateProfile } from "firebase/auth";
 import { Auth } from "../../../utils/firebase";
 
 import { UserContext } from "../../contexts/userContext";
@@ -13,7 +13,6 @@ import { Container,
     CadastrarMessageButtonText, 
     BtnRedirecionar } from './styles';
 import { Image } from "react-native";
-
 import InputArea from '../../components/loginInput';
 
 const Register = () => {
@@ -33,6 +32,10 @@ const Register = () => {
         if (name !== '' && email !== '' && password !== '') {
             try {
                 await createUserWithEmailAndPassword(Auth, email, password)
+                updateProfile(Auth.currentUser, {
+                    displayName: name, 
+                    photoURL: 'https://i.pinimg.com/236x/21/9e/ae/219eaea67aafa864db091919ce3f5d82.jpg',
+                })
 
                 navigation.reset({
                     routes: [{name: 'MainTab'}]
